@@ -1,0 +1,13 @@
+package org.example.pres;
+
+import org.example.metier.IGestion;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class SpringAnnotation {
+    public static void main(String[] args) {
+        ApplicationContext context=new AnnotationConfigApplicationContext("org.example.dao","org.example.metier");
+        IGestion gestion=context.getBean(IGestion.class);
+        System.out.println(gestion.calcul());
+    }
+}
